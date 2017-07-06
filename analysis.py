@@ -24,20 +24,20 @@ from rule  import *
 #List of possible anomalies with a particular duration
 
 anomalies = [
-	("spike",MinutesScale(), Spike()),    # 1 day
+	("spike",MinutesScale(), Spike()),             # 1 day
 
 	("osc_3h",MinutesScale(), Oscillation(3,18)),  # 3 hours
-	("osc_6h",MinutesScale(20), Oscillation(18)), # 6 hours
-	("osc_1d",HourScale(1), Oscillation(24)),    # 1 day
+	("osc_6h",MinutesScale(20), Oscillation(18)),  # 6 hours
+	("osc_1d",HourScale(1), Oscillation(24)),      # 1 day
 
-	("step_1d",HourScale(1), Step(24)),    # 1 day
-	("step_5d",HourScale(4), Step(30)),    # 5 days
-	("step_10d",HourScale(8), Step(30)),  # 10 days
+	("step_1d",HourScale(1), Step(24)),            # 1 day
+	("step_5d",HourScale(4), Step(30)),            # 5 days
+	("step_10d",HourScale(8), Step(30)),           # 10 days
 
-	("trend_5d",HourScale(4), Trend(30)),   # 5 days
-	("trend_15d",HourScale(12), Trend(30)), # 15 days
-	("trend_30d",DayScale(1), Trend(30)),   # 30 days
-	("trend_60d",DayScale(2), Trend(30))    # 60 days
+	("trend_1d",HourScale(1), Trend(24)),          # 1 days
+    ("trend_7d",HourScale(6), Trend(28)),          # 7 days
+    ("trend_30d",DayScale(1), Trend(30)),          # 30 days
+    ("trend_180d",DayScale(6), Trend(30))          # 180 days
 ]
 
 #function related to score dataframe
